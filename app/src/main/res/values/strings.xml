@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">soundsight</string>
+    <string name="app_logo">app logo</string>
+    <string name="app_tagline">Empowering Every Sense</string>
+    <string name="sign_up">Sign up</string>
+    <string name="login">Login</string>
+    <string name="helpline">NCPEDP Helpline for PWD in need of legal aid and support.</string>
+    <string name="helpline_con">For persons with disabilities in need of legal aid and support.</string>
+    <string name="helpline_number">+919811980108 </string>
+    <string name="helpline_hours">Monday–Friday | 10 am - 6 pm</string>
+    <string name="national_con">India\'s first platform to provide legal aid and guidance on different resources available for persons with disabilities.</string>
+    <string name="national_helpline">National Helpline Number</string>
+    <string name="national_helpline_number">14456</string>
+    <string name="helpline_ic">Helpline Icon</string>
+    <string name="sign_en">Sign Encyclopedia</string>
+    <string name="translation">Translation</string>
+    <string name="helpline_menu">Help-Line</string>
+    <string name="hello">Hello</string>
+    <string name="sign_text">here the sign to speech text will appear</string>
+    <string name="blind_text">here the object detected text will appear</string>
+    <string name="home">Home</string>
+    <string name="translate">Translate</string>
+    <string name="audio">Audio</string>
+    <string name="stop">stop</string>
+</resources>
+
+
