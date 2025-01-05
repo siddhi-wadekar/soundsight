@@ -5,9 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".BlindDetectionActivity">
 
 
+    <!-- Top background -->
     <View
         android:id="@+id/top_background"
         android:layout_width="0dp"
@@ -18,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Logo -->
     <ImageView
         android:id="@+id/logo"
         android:layout_width="95dp"
@@ -30,6 +32,7 @@
         app:layout_constraintTop_toTopOf="@id/top_background"
         app:layout_constraintVertical_bias="0.4" />
 
+    <!-- Bottom Bar -->
     <View
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
@@ -38,6 +41,16 @@
         app:layout_constraintHeight_percent="0.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <!-- Bottom Icons and Text -->
     <LinearLayout
@@ -51,6 +64,7 @@
         app:layout_constraintTop_toTopOf="@id/bottom_bar">
 
         <TextView
+            android:id="@+id/home_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -61,6 +75,7 @@
             app:drawableTopCompat="@drawable/ic_round_home" />
 
         <TextView
+            android:id="@+id/translate_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -70,8 +85,8 @@
             android:textSize="12sp"
             app:drawableTopCompat="@drawable/ic_translate" />
 
-
         <TextView
+            android:id="@+id/stop_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -80,11 +95,9 @@
             android:textColor="@android:color/white"
             android:textSize="12sp"
             app:drawableTopCompat="@drawable/ic_stop" />
-
-        <!--sign langugae text-->
-
     </LinearLayout>
 
+    <!-- Blind Text -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,6 +111,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top_background"
         app:layout_constraintVertical_bias="0.947" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

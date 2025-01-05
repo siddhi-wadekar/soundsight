@@ -1,27 +1,55 @@
 package com.example.soundsight;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Declare buttons globally so they can be accessed in any method
+    private Button btnAuditory;
+    private Button btnBlind;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Change this to target a specific view ID in your layout.
-        // If you don't have a root view with the ID 'main', replace it with a valid view ID from activity_main.xml.
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        // Initialize Buttons
+        btnAuditory = findViewById(R.id.btnAuditory); // Assuming you have a button for auditory users
+        btnBlind = findViewById(R.id.btnBlind); // Assuming you have a button for blind users
+
+        // Auditory User Click (Opens FragmentDeafHome)
+        btnAuditory.setOnClickListener(v -> openAuditoryFragment());
+
+        // Blind User Click (Opens FragmentBlindHome)
+        btnBlind.setOnClickListener(v -> openBlindFragment());
+    }
+
+    private void openAuditoryFragment() {
+        // Hide buttons once clicked
+        btnAuditory.setVisibility(Button.GONE);
+        btnBlind.setVisibility(Button.GONE);
+
+        // Switch to the Auditory Fragment (FragmentDeafHome)
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(android.R.id.content, new FragmentDeafHome()); // Replace with your FragmentDeafHome
+        transaction.addToBackStack(null); // Optional: Add transaction to back stack
+        transaction.commit();
+    }
+
+    private void openBlindFragment() {
+        // Hide buttons once clicked
+        btnAuditory.setVisibility(Button.GONE);
+        btnBlind.setVisibility(Button.GONE);
+
+        // Switch to the Blind Fragment (FragmentBlindHome)
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(android.R.id.content, new FragmentBlindHome()); // Replace with your FragmentBlindHome
+        transaction.addToBackStack(null); // Optional: Add transaction to back stack
+        transaction.commit();
     }
 }
