@@ -2,6 +2,7 @@ package com.example.soundsight;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DeafHelpActivity extends AppCompatActivity {
@@ -11,12 +12,14 @@ public class DeafHelpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_deaf_help);
 
-        // Handle home button click
-        findViewById(R.id.home_button).setOnClickListener(v -> {
-            // Navigate back to DeafHomeActivity using Intent
-            Intent intent = new Intent(DeafHelpActivity.this, DeafHomeActivity.class);
-            startActivity(intent);
-            finish(); // Optionally finish this activity to remove it from the back stack
-        });
+        // Navigate back to DeafHomeActivity using home button
+        TextView homeButton = findViewById(R.id.home_button);
+        if (homeButton != null) {
+            homeButton.setOnClickListener(v -> {
+                Intent intent = new Intent(DeafHelpActivity.this, DeafHomeActivity.class);
+                startActivity(intent);
+                finish();
+            });
+        }
     }
 }

@@ -2,7 +2,6 @@ package com.example.soundsight;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,24 +14,22 @@ public class BlindDetectionActivity extends AppCompatActivity {
 
         // Home button handling
         TextView homeButton = findViewById(R.id.home_button);
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate back to BlindHomeActivity
+        if (homeButton != null) {
+            homeButton.setOnClickListener(v -> {
                 Intent intent = new Intent(BlindDetectionActivity.this, BlindHomeActivity.class);
                 startActivity(intent);
-            }
-        });
+                finish(); // Finish current activity
+            });
+        }
 
         // Stop button handling
         TextView stopButton = findViewById(R.id.stop_button);
-        stopButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Navigate back to BlindHomeActivity
+        if (stopButton != null) {
+            stopButton.setOnClickListener(v -> {
                 Intent intent = new Intent(BlindDetectionActivity.this, BlindHomeActivity.class);
                 startActivity(intent);
-            }
-        });
+                finish();
+            });
+        }
     }
 }

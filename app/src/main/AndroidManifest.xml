@@ -27,8 +27,10 @@
 
         <!-- Activities -->
         <activity android:name=".DeafHomeActivity" />
-        <activity android:name=".DeafInfoActivity" />
+        <activity android:name=".DeafDetectionActivity" />
         <activity android:name=".DeafHelpActivity" />
+        <activity android:name=".DeafInfoActivity" />
+
 
     </application>
 
