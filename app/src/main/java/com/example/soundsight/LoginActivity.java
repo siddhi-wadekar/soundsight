@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailInput, passwordInput;
+    private SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,29 +20,48 @@ public class LoginActivity extends AppCompatActivity {
 
         emailInput = findViewById(R.id.etEmail);
         passwordInput = findViewById(R.id.etPassword);
+        sessionManager = new SessionManager(this);
 
         Button loginButton = findViewById(R.id.btnLogin);
         loginButton.setOnClickListener(v -> handleLogin());
+
+        TextView signUpLink = findViewById(R.id.SignUp);
+        signUpLink.setOnClickListener(v -> navigateToSignUp());
     }
 
     private void handleLogin() {
         String email = emailInput.getText().toString();
         String password = passwordInput.getText().toString();
 
-        // Replace with actual authentication logic
-        if (email.equals("test@demo.com") && password.equals("password123")) {
-            SessionManager sessionManager = new SessionManager(LoginActivity.this);
-            sessionManager.setLogin(true, email, sessionManager.getImpairmentType());
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(LoginActivity.this, "Enter all fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-            // Navigate based on impairment type
-            if ("Deaf".equals(sessionManager.getImpairmentType())) {
-                startActivity(new Intent(LoginActivity.this, DeafHomeActivity.class));
+        // Check credentials
+        if (email.equals(sessionManager.getEmail()) && password.equals("password123")) { // Adjust password check
+            String impairmentType = sessionManager.getImpairmentType();
+            if ("Deaf".equals(impairmentType)) {
+                navigateToDeafHome();
             } else {
-                startActivity(new Intent(LoginActivity.this, BlindHomeActivity.class));
+                navigateToBlindHome();
             }
-            finish();
         } else {
             Toast.makeText(LoginActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void navigateToSignUp() {
+        startActivity(new Intent(this, SignUpActivity.class));
+    }
+
+    private void navigateToDeafHome() {
+        startActivity(new Intent(this, DeafHomeActivity.class));
+        finish();
+    }
+
+    private void navigateToBlindHome() {
+        startActivity(new Intent(this, BlindHomeActivity.class));
+        finish();
     }
 }

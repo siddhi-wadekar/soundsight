@@ -1,11 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.soundsight">
-
-    <!-- Permissions (if needed) -->
-    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
-    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
 
     <application
         android:allowBackup="true"
@@ -15,37 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Soundsight">
 
-        <!-- Main Activity (Launch Activity) -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"> <!-- Set exported attribute here -->
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- SessionManager Service (Set exported as false if it's not accessible externally) -->
-        <service android:name=".SessionManager" android:exported="false" />
-
-        <!-- User Activity (Set exported as needed) -->
-        <activity android:name=".UserActivity" android:label="User Activity" android:exported="true" />
-
-        <!-- Sign-Up Activity -->
-        <activity android:name=".SignUpActivity" android:exported="true" />
-
-        <!-- Login Activity -->
-        <activity android:name=".LoginActivity" android:exported="true" />
-
-        <!-- Blind User Activities -->
-        <activity android:name=".BlindHomeActivity" android:exported="true" />
-        <activity android:name=".BlindDetectionActivity" android:exported="true" />
-
-        <!-- Deaf User Activities -->
-        <activity android:name=".DeafHomeActivity" android:exported="true" />
-        <activity android:name=".DeafDetectionActivity" android:exported="true" />
-        <activity android:name=".DeafHelpActivity" android:exported="true" />
-        <activity android:name=".DeafInfoActivity" android:exported="true" />
-
+        <activity android:name=".SignUpActivity" android:exported="true"/>
+        <activity android:name=".LoginActivity" android:exported="true"/>
+        <activity android:name=".BlindHomeActivity" android:exported="true"/>
+        <activity android:name=".DeafHomeActivity" android:exported="true"/>
     </application>
 </manifest>

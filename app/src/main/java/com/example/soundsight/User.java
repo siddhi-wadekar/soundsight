@@ -4,6 +4,14 @@ public class User {
     private String email;
     private String impairmentType;
 
+    // Default constructor (no arguments)
+    public User() {
+        // Default values can be set here if needed
+        this.email = "";
+        this.impairmentType = "";
+    }
+
+    // Parameterized constructor
     public User(String email, String impairmentType) {
         this.email = email;
         this.impairmentType = impairmentType;

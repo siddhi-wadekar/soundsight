@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context=".DeafInfoActivity">
 
     <!-- Scrollable Content -->
     <ScrollView
@@ -82,8 +85,7 @@
             android:textSize="12sp"
             android:drawablePadding="4dp"
             android:id="@+id/home_button"
-            android:drawableTop="@drawable/ic_round_home" />
-
+            app:drawableTopCompat="@drawable/ic_round_home" />
     </LinearLayout>
 
 </RelativeLayout>
