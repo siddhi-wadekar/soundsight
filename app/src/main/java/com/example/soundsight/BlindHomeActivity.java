@@ -1,9 +1,13 @@
 package com.example.soundsight;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+
 
 public class BlindHomeActivity extends AppCompatActivity {
 
@@ -20,5 +24,20 @@ public class BlindHomeActivity extends AppCompatActivity {
                 startActivity(intent);
             });
         }
+
+        // Log out button handling
+        Button logoutButton = findViewById(R.id.btnLogout1);
+        if (logoutButton != null) {
+            logoutButton.setOnClickListener(v -> {
+                SharedPreferences.Editor editor = getSharedPreferences("UserSession", MODE_PRIVATE).edit();
+                editor.clear();
+                editor.apply();
+
+                Intent intent = new Intent(BlindHomeActivity.this, Sign_in.class);
+                startActivity(intent);
+                finish();
+            });
+        }
+
     }
 }

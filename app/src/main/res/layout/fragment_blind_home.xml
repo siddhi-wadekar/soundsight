@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeafHomeActivity">
+    tools:context=".BlindHomeActivity">
 
-    <!-- Background color for the top section -->
+    <!-- Top Background Section -->
     <View
         android:id="@+id/top_background"
         android:layout_width="match_parent"
@@ -17,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Logo -->
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.4" />
 
-    <!-- "soundsight" Text -->
+    <!-- Soundsight App Name -->
     <TextView
         android:id="@+id/text_soundsight"
         android:layout_width="wrap_content"
@@ -42,37 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- "Empowering Every Sense" Slogan -->
-    <TextView
-        android:id="@+id/text_slogan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_tagline"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/text_soundsight"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Bottom Bar Background -->
-    <TextView
-        android:id="@+id/welcome_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="140dp"
-        android:text="@string/hello"
-        android:textStyle="bold"
-        android:textColor="#40269B"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+    <!-- Bottom Navigation -->
     <View
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
@@ -82,32 +52,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Bottom Icons and Text -->
     <LinearLayout
-        android:layout_width="407dp"
-        android:layout_height="0dp"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/bottom_bar">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Translation -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
+            android:orientation="vertical"
+            android:gravity="center">
             <ImageView
                 android:id="@+id/translation_blind"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:contentDescription="@string/translation"
                 android:src="@drawable/ic_translation" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -115,7 +79,19 @@
                 android:textColor="@android:color/white"
                 android:textSize="12sp" />
         </LinearLayout>
-
     </LinearLayout>
+
+    <!-- Logout Button -->
+    <Button
+        android:id="@+id/btnLogout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/Log_out"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/light_purple"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

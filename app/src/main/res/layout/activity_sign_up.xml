@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/purple"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".SignUpActivity">
 
     <!-- Logo at the top -->
     <ImageView
@@ -24,8 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:cardCornerRadius="30dp"
-        app:cardElevation="8dp"
-        android:backgroundTint="@color/white">
+        app:cardElevation="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,22 +60,18 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/blue" />
 
-            <!-- Phone Number Input -->
-            <EditText
-                android:id="@+id/etPhone"
+            <!-- Username Input -->
+            <EditText                android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="16dp"
-                android:autofillHints="phoneNumber"
-                android:drawableStart="@drawable/ic_phone"
-                android:drawablePadding="8dp"
-                android:hint="@string/phone_hint"
-                android:inputType="phone"
+                android:hint="Username"
+                android:drawableStart="@drawable/ic_user"
                 android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/blue" />
 
-            <!--password field-->
+            <!-- Password Input -->
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
@@ -83,51 +79,24 @@
                 android:layout_marginBottom="16dp"
                 android:autofillHints="password"
                 android:drawableStart="@drawable/ic_password"
-            android:drawablePadding="8dp"
-            android:hint="@string/password_hint"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/blue" />
-
-
+                android:drawablePadding="8dp"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/blue" />
 
             <!-- Choose Impairment Type -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/choose_impairment"
-                android:textStyle="bold"
-                android:textColor="@color/purple"
-                android:textSize="16sp" />
-
             <RadioGroup
                 android:id="@+id/rgImpairmentType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:orientation="vertical">
-
-                <RadioButton
-                    android:id="@+id/rbAuditoryImpaired"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/auditory_impaired"
-                    android:textColor="@color/blue" />
-
-                <RadioButton
-                    android:id="@+id/rbVisuallyImpaired"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/visually_impaired"
-                    android:textColor="@color/blue" />
-
-            </RadioGroup>
+                android:orientation="vertical" />
 
             <!-- Sign Up Button -->
             <Button
-                android:id="@+id/btnSignUp"
+                android:id="@+id/btnSignUpSubmit"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="20dp"
