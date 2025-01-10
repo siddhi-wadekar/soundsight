@@ -52,9 +52,23 @@ dependencies {
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
+    implementation(libs.litert)
+    implementation(libs.litert.support.api)
 
     // Testing Dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    //implementation("org.tensorflow:tensorflow-lite-api:2.16.1")
+    implementation("androidx.camera:camera-camera2:1.0.0-beta05") // CameraX library
+    implementation("androidx.camera:camera-lifecycle:1.0.0-beta05")
+    implementation("androidx.camera:camera-view:1.0.0-alpha08") // Optional for camera preview
+    implementation("androidx.camera:camera-core:1.3.0")
+    implementation("androidx.camera:camera-lifecycle:1.3.0")
+    implementation("androidx.camera:camera-view:1.3.0")
+
+    implementation("androidx.appcompat:appcompat:1.3.0")
+    implementation ("androidx.core:core:1.6.0")
+
 }

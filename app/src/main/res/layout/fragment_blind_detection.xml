@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".BlindDetectionActivity">
 
+    <!-- Camera Preview -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/view_finder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 
     <!-- Top background -->
     <View
@@ -31,6 +37,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/top_background"
         app:layout_constraintVertical_bias="0.4" />
+
+    <!-- Detection Result Text -->
+    <TextView
+        android:id="@+id/blind_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_background"
+        app:layout_constraintVertical_bias="0.8" />
 
     <!-- Bottom Bar -->
     <View
