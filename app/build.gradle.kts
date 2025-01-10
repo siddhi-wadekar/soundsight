@@ -44,10 +44,14 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("com.google.code.gson:gson:2.10")
 
-    // Firebase Dependencies
+    // Firebase Authentication
+    implementation ("com.google.firebase:firebase-auth:22.0.1")
+    // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
-    implementation(libs.firebase.database)
 
     // Testing Dependencies
     testImplementation(libs.junit)

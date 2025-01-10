@@ -8,11 +8,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.soundsight.BlindHomeActivity;
-import com.example.soundsight.DeafHomeActivity;
 
 public class ImpairmentSelectionActivity extends AppCompatActivity {
 
@@ -41,16 +37,19 @@ public class ImpairmentSelectionActivity extends AppCompatActivity {
                     RadioButton selectedButton = findViewById(selectedId);
                     String impairmentType = selectedButton.getText().toString();
 
+                    // Debugging logs
+                    System.out.println("Selected impairment: " + impairmentType);
+
                     // Save selected option in SharedPreferences
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("ImpairmentType", impairmentType);
                     editor.apply();
 
                     // Navigate to respective home page
-                    if ("Auditory Impairment".equals(impairmentType)) {
+                    if (impairmentType.equals(getString(R.string.auditory_impaired))) {
                         Intent intent = new Intent(ImpairmentSelectionActivity.this, DeafHomeActivity.class);
                         startActivity(intent);
-                    } else if ("Visionary Impairment".equals(impairmentType)) {
+                    } else if (impairmentType.equals(getString(R.string.visually_impaired))) {
                         Intent intent = new Intent(ImpairmentSelectionActivity.this, BlindHomeActivity.class);
                         startActivity(intent);
                     }

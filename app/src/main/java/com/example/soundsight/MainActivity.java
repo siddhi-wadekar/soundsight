@@ -1,20 +1,26 @@
 package com.example.soundsight;
 
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-        Button btnSignUp = findViewById(R.id.btnSignUp);
-        Button btnSignIn = findViewById(R.id.btnSignIn);
+    public void signin(View view) {
+        Intent intent = new Intent(MainActivity.this, sign_in.class);
+        startActivity(intent);
+    }
 
-        btnSignUp.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SignUpActivity.class)));
-        btnSignIn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Sign_in.class)));
+    public void signup(View view) {
+        Intent intent = new Intent(MainActivity.this, sign_up.class);
+        startActivity(intent);
     }
 }
+

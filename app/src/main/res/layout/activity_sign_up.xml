@@ -8,7 +8,7 @@
     android:gravity="center"
     android:background="@color/purple"
     android:padding="16dp"
-    tools:context=".SignUpActivity">
+    tools:context=".sign_up">
 
     <!-- Logo at the top -->
     <ImageView
@@ -47,7 +47,7 @@
 
             <!-- Email Input -->
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/etEmailSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="16dp"
@@ -60,20 +60,9 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/blue" />
 
-            <!-- Username Input -->
-            <EditText                android:id="@+id/etUsername"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="16dp"
-                android:hint="Username"
-                android:drawableStart="@drawable/ic_user"
-                android:padding="12dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/blue" />
-
             <!-- Password Input -->
             <EditText
-                android:id="@+id/etPassword"
+                android:id="@+id/etPasswordSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="16dp"
@@ -86,13 +75,6 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/blue" />
 
-            <!-- Choose Impairment Type -->
-            <RadioGroup
-                android:id="@+id/rgImpairmentType"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:orientation="vertical" />
 
             <!-- Sign Up Button -->
             <Button
@@ -108,7 +90,7 @@
 
             <!-- Sign In Option -->
             <TextView
-                android:id="@+id/already_have_acc"
+                android:id="@+id/tvGoToSignIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

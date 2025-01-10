@@ -36,11 +36,11 @@
     <string name="facebook_sign_in">Facebook</string>
     <string name="auditory">Auditory user</string>
     <string name="blind">Blind user</string>
-    <string name="visually_impaired">Visually Impaired</string>
-    <string name="auditory_impaired">Auditory Impaired</string>
-    <string name="choose_impairment">Choose Impairment Type</string>
     <string name="phone_hint">Phone Number</string>
     <string name="already_have_acc">Already have an account? login</string>
+    <string name="choose_impairment">Choose Your Impairment</string>
+    <string name="auditory_impaired">Auditory Impairment</string>
+    <string name="visually_impaired">Visionary Impairment</string>
     <string name="next">Next</string>
     <string name="Log_out">Log out</string>
 </resources>

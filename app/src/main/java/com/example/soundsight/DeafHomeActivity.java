@@ -50,7 +50,7 @@ public class DeafHomeActivity extends AppCompatActivity {
                 editor.clear();
                 editor.apply();
 
-                Intent intent = new Intent(DeafHomeActivity.this, Sign_in.class);
+                Intent intent = new Intent(DeafHomeActivity.this, sign_in.class);
                 startActivity(intent);
                 finish();
             });

@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Soundsight">
 
+        <activity
+            android:name=".sign_in"/>
+        <activity
+            android:name=".sign_up"/>
         <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -18,14 +22,13 @@
             </intent-filter>
         </activity>
 
+
         <activity android:name=".BlindHomeActivity" android:exported="true"/>
         <activity android:name=".DeafHomeActivity" android:exported="true"/>
-
-        <activity
-            android:name=".Sign_in"
-            android:exported="false" />
-        <activity
-            android:name=".SignUpActivity"
-            android:exported="false" />
+        <activity android:name=".BlindDetectionActivity" android:exported="true"/>
+        <activity android:name=".DeafDetectionActivity" android:exported="true"/>
+        <activity android:name=".ImpairmentSelectionActivity" android:exported="true"/>
+        <activity android:name=".DeafHelpActivity" android:exported="true"/>
+        <activity android:name=".DeafInfoActivity" android:exported="true"/>
     </application>
 </manifest>
