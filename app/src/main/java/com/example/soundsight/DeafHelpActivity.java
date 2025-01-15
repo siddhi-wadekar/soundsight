@@ -10,7 +10,7 @@ public class DeafHelpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_deaf_help);
+        setContentView(R.layout.activity_deaf_help);
 
         // Navigate back to DeafHomeActivity using home button
         TextView homeButton = findViewById(R.id.home_button);

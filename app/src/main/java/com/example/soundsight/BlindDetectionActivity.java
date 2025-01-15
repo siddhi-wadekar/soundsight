@@ -6,7 +6,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
 import android.graphics.Rect;
 import android.graphics.YuvImage;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -51,7 +50,7 @@ public class BlindDetectionActivity extends AppCompatActivity implements OnInitL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_blind_detection);
+        setContentView(R.layout.activity_blind_detection);
 
         // Initialize Text-to-Speech
         textToSpeech = new TextToSpeech(this, this);

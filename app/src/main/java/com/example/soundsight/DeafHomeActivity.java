@@ -3,7 +3,6 @@ package com.example.soundsight;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +12,7 @@ public class DeafHomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_deaf_home);
+        setContentView(R.layout.activity_deaf_home);
 
         // Button to navigate to DeafDetectionActivity
         ImageView icTranslation = findViewById(R.id.ic_translation);

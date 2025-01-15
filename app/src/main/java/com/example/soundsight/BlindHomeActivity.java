@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
-import android.view.View;
+
 import android.widget.Button;
 
 
@@ -14,7 +14,7 @@ public class BlindHomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_blind_home);
+        setContentView(R.layout.activity_blind_home);
 
         // Translation button handling
         ImageView translation = findViewById(R.id.translation_blind);
