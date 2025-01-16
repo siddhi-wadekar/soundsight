@@ -24,7 +24,7 @@ public class ImpairmentSelectionActivity extends AppCompatActivity {
         Button btnNext = findViewById(R.id.btnNext);
 
         // Initialize SharedPreferences to save session
-        sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("User Session", MODE_PRIVATE);
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,9 +36,6 @@ public class ImpairmentSelectionActivity extends AppCompatActivity {
                 } else {
                     RadioButton selectedButton = findViewById(selectedId);
                     String impairmentType = selectedButton.getText().toString();
-
-                    // Debugging logs
-                    System.out.println("Selected impairment: " + impairmentType);
 
                     // Save selected option in SharedPreferences
                     SharedPreferences.Editor editor = sharedPreferences.edit();

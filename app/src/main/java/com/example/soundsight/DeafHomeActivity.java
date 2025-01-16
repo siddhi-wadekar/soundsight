@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class DeafHomeActivity extends AppCompatActivity {
 
@@ -45,10 +46,15 @@ public class DeafHomeActivity extends AppCompatActivity {
         Button logoutButton = findViewById(R.id.btnLogout2);
         if (logoutButton != null) {
             logoutButton.setOnClickListener(v -> {
-                SharedPreferences.Editor editor = getSharedPreferences("UserSession", MODE_PRIVATE).edit();
+                // Clear user session
+                SharedPreferences.Editor editor = getSharedPreferences("User Session", MODE_PRIVATE).edit();
                 editor.clear();
                 editor.apply();
 
+                // Sign out from Firebase
+                FirebaseAuth.getInstance().signOut();
+
+                // Redirect to sign_in
                 Intent intent = new Intent(DeafHomeActivity.this, sign_in.class);
                 startActivity(intent);
                 finish();

@@ -5,9 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.widget.Button;
-
+import com.google.firebase.auth.FirebaseAuth;
 
 public class BlindHomeActivity extends AppCompatActivity {
 
@@ -29,15 +28,19 @@ public class BlindHomeActivity extends AppCompatActivity {
         Button logoutButton = findViewById(R.id.btnLogout1);
         if (logoutButton != null) {
             logoutButton.setOnClickListener(v -> {
-                SharedPreferences.Editor editor = getSharedPreferences("UserSession", MODE_PRIVATE).edit();
+                // Clear user session
+                SharedPreferences.Editor editor = getSharedPreferences("User  Session", MODE_PRIVATE).edit();
                 editor.clear();
                 editor.apply();
 
+                // Sign out from Firebase
+                FirebaseAuth.getInstance().signOut();
+
+                // Redirect to sign_in
                 Intent intent = new Intent(BlindHomeActivity.this, sign_in.class);
                 startActivity(intent);
                 finish();
             });
         }
-
     }
 }
